@@ -5,6 +5,7 @@
 # j to the child i, and the child i will be content. Your goal is to maximize 
 # the number of content and output the maximum number.
 
+# Alt 1
 def cookie(gkids,ckies):
   stack = []
   for i in ckies:
@@ -25,3 +26,23 @@ def cookie(gkids,ckies):
 gkids = list(map(int,input().split()))
 ckies = list(map(int,input().split()))
 print(cookie(gkids,ckies))
+
+#IDEAL SOLUTION 
+# Least time complexity code of 2.
+# Logic: if the smallest kid cant be satisfies with the smallest cookie available, 
+# there is no use checking if the bigger kids following the smallest kid when both 
+# greed factor list and cookie size list are ordered in ascending order are satisfied 
+# or not.
+def cookie(s,g):
+  n,m,i,j = len(s),len(g),0,0
+  s.sort()
+  g.sort()
+  while(i<n and j<m):
+    if s[i]>=g[j]:
+      j+=1
+    i+=1
+  return j
+
+s = list(map(int,input().split()))
+g = list(map(int,input().split()))
+print(cookie(s,g))
