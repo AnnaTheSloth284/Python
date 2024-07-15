@@ -1,3 +1,11 @@
+# Write a program to check for balanced brackets
+# Input:
+
+# {[]}
+
+# Output:
+
+# True
 def check(inp):
   stack = []
   for i in inp:
